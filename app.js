@@ -10,7 +10,7 @@ export default function appScr(express, bodyParser, fs, crypto, http, CORS, User
         .use(bodyParser.urlencoded({extended:true}))  
         .use(bodyParser.json()) 
         .all('/login/', r => {
-            r.res.set(headersTEXT).send('itmo310267');
+            r.res.set(headersTEXT).send('gamzanikita');
         })
         .all('/code/', r => {
             r.res.set(headersTEXT)
@@ -65,11 +65,11 @@ export default function appScr(express, bodyParser, fs, crypto, http, CORS, User
                 .on('data',d=>b+=d)
                 .on('end',()=>{
                     fs.writeFileSync('views/index.pug', b);
-                    res.render('index',{login:'itmo310267',random2,random3})
+                    res.render('index',{login:'gamzanikita',random2,random3})
                 })
             })
         })
-        .use(({res:r})=>r.status(404).set(headersHTML).send('itmo310267'))
+        .use(({res:r})=>r.status(404).set(headersHTML).send('gamzanikita'))
         .set('view engine','pug')
     return app;
 }
